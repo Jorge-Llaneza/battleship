@@ -1,10 +1,19 @@
 package simple;
 
 public class Game {
-    private static byte size = 7;
-    private static byte possibleShipPositions;
+    private int size = 7;
+    private int shipPosition;
+    private boolean[] partIsHit;
 
-    public game() {
+    public Game() {
+        int possibleShipPositions = this.size - 2;
+        this.shipPosition = (int) (Math.random()*possibleShipPositions) + 1;
+        }
+    public void shoot(int location) {
+        if (location < 1 || location > this.size) {
+            System.out.println("Try hitting inside the grid next time");
+            return
+        }
 
     }
 }
